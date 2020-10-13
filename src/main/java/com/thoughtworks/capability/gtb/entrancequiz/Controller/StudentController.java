@@ -1,10 +1,8 @@
 package com.thoughtworks.capability.gtb.entrancequiz.Controller;
 
-import com.thoughtworks.capability.gtb.entrancequiz.Controller.dto.StudentListResponse;
 import com.thoughtworks.capability.gtb.entrancequiz.Model.Student;
 import com.thoughtworks.capability.gtb.entrancequiz.Service.StudentService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +18,7 @@ public class StudentController {
     }
 
     @GetMapping("/students")
+    @CrossOrigin
     public List<Student> findAllStudents() {
         return studentService.findAll();
     }
